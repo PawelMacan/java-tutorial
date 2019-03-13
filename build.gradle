@@ -8,11 +8,33 @@
 
 // Apply the java-library plugin to add support for Java Library
 apply plugin: 'java-library'
+apply plugin: 'application'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+
+mainClassName = entrypoint
+
+sourceCompatibility = JavaVersion.VERSION_1_8
+targetCompatibility = JavaVersion.VERSION_1_8
+
+buildscript {
+    repositories{
+        mavenCentral()
+    }
+    dependencies {
+        classpath "org.springframework.boot:spring-boot-gradle-plugin:" + frameworkVersion
+    }
+}
 
 dependencies {
-
     // Use JUnit test framework
     testCompile 'junit:junit:4.12'
+    compile "org.springframework.boot:spring-boot-starter"
+    compile "org.springframework.boot:spring-boot-starter-web"
+    compile "org.springframework.boot:spring-boot-starter-test"
+
+    compile 'org.projectlombok:lombok:1.16.10'
 }
 
 // In this section you declare where to find the dependencies of your project
