@@ -17,6 +17,6 @@ public class Query {
     @GetMapping(path = "/hello/{name}")
     public String getHello(@PathVariable("name") String name) {
 
-        return (String) queryService.getHello(name);
+        return queryService.getHello(name);
     }
 }

@@ -17,6 +17,6 @@ public class Command {
 
     @PostMapping(path = "/price", consumes = "application/json")
     public double calculatePrice(@RequestBody Bill request){
-        return (request.getPrice() + request.getPrice() * request.getVatRate())  * request.getQuantity();
+        return commandService.getPrice(request);
     }
 }
