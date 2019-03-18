@@ -7,8 +7,11 @@ import tutorial.model.Bill;
 @Component
 public class CommandService {
 
-    public double getPrice(Bill bill){
-        if(bill.getQuantity() > 10) throw new MaximumQuantityExceededException( bill.getQuantity() );
+    public double getPrice(Bill bill) throws MaximumQuantityExceededException {
+
+        if(bill.getQuantity() > 10) {
+            throw new MaximumQuantityExceededException(bill.getQuantity());
+        }
 
         return (bill.getPrice() + bill.getPrice() * bill.getVatRate())  * bill.getQuantity();
     }

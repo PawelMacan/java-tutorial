@@ -35,6 +35,8 @@ dependencies {
     compile "org.springframework.boot:spring-boot-starter-test"
 
     compile 'org.projectlombok:lombok:1.16.10'
+
+    compile group: 'io.springfox', name: 'springfox-swagger2', version: '2.6.1'
 }
 
 // In this section you declare where to find the dependencies of your project

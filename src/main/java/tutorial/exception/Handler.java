@@ -30,7 +30,7 @@ public class Handler {
         String givenValueType = s[3];
         String givenValue = fields[1];
 
-        return "Field " + fieldName + " nyst be if type " + requiredValue + "."
+        return "Field " + fieldName + " must be of type " + requiredValue + "."
                 + "Value of type " + givenValueType + " provided: " + givenValue + ".";
     }
 }
